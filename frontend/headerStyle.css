@@ -1,0 +1,16 @@
+body {
+    background:#f9fff3;
+    /* margin:0px; */
+    /* padding:0px; */
+}
+.header {
+    background:#f9fff3;
+    border-bottom:#000000 2px solid;
+    padding-bottom: 10px;
+    width: 100%;
+    height:60px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; /* Aligns elements vertically in case their heights differ */
+    gap: 20px; /* Adds spacing between items */
+}
