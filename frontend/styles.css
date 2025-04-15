@@ -1,21 +1,21 @@
 html, body {
-    background:aliceblue;
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
-    display: flex;
-    flex-direction: column;
-    font-family:Arial;
-  }
+  background:aliceblue;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  font-family:Arial, Helvetica, sans-serif;
+}
 
 
 .navbar ul{
   background:beige;
-  border-bottom:rgb(220, 220, 200) 1px solid;
-  position: fixed;
+  border-bottom:rgb(220, 220, 200) 1px solid; /* Soft separation bar */
+  position: fixed; /* Change to "relative" if you don't want navbar fixed but also change "margin-top" in main component to 0 */
   top: 0;
   width: 100%;
-  list-style-type: none;
+  list-style-type: none; /* Get rid of bullets from list */
   padding: 0px;
   margin: 0px;
   overflow: hidden;
@@ -23,18 +23,17 @@ html, body {
   display:flex;
 }
 .navbar a {
+  /* Text settings */
   color:black;
   font-weight: bold;
   text-decoration: none;
-  padding: 14px 16px;
-  margin: 0px;
 
-  
-  
-  height: 45px;
+  /* Format settings */
+  padding: 0px 16px;
+  margin: 0px;
+  height: 64px;
   display: flex;
   align-items: center;
-
   justify-content: center;
   text-align: center;
 }
@@ -42,38 +41,40 @@ html, body {
 .navbar_text:hover{
   background-color:rgb(245, 220, 225);
 }
+
 .navbar li{
-  /* float: left; */
+  float: left;
   align-items: center;
 }
 
 
 .main {
-flex: 1; 
-padding: 5px;
-text-align: center;
+  flex: 1; 
+  margin-top: 64px; /* Compensate for the navbar height */
+  padding: 20px;
+  text-align: center;
 }
+
 
 .site_footer{
-    background-color: rgb(51, 51, 51);
-    color:aliceblue;
-    text-align:center;
-    padding:20px
+  background-color: rgb(51, 51, 51);
+  color:aliceblue;
+  text-align:center;
+  padding:20px
 }
 
-
 .site_footer ul {
-    display: flex;
-    list-style: none;
-    padding: 15px 5px;
-    margin: 0;
-    justify-content: center;
-  }
+  display: flex;
+  list-style: none;
+  padding: 15px 5px;
+  margin: 0px;
+  justify-content: center;
+}
 
 .site_footer li:not(:last-child)::after {
-content: '|';
-margin-left: 15px;
-margin-right: 15px;
-color: aliceblue;
+  content: '|';
+  margin-left: 15px;
+  margin-right: 15px;
+  color: aliceblue;
 }
   
