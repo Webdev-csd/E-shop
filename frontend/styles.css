@@ -8,6 +8,10 @@ html, body {
   font-family:Arial, Helvetica, sans-serif;
 }
 
+.header{
+  z-index: 1000;
+}
+
 
 .navbar ul{
   background:beige;
@@ -47,12 +51,29 @@ html, body {
   align-items: center;
 }
 
+.swiper {
+  width: 600px;
+  height: fit-content;
+}
+
+.swiper-slide img{
+  width: 100%;
+}
+
+.swiper .swiper-button-next, .swiper .swiper-button-prev{
+  color:white
+}
+
+.swiper{
+  --swiper-pagination-color: white;
+}
 
 .main {
   flex: 1; 
   margin-top: 64px; /* Compensate for the navbar height */
   padding: 20px;
   text-align: center;
+
 }
 
 
