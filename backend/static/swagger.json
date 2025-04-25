@@ -1,0 +1,115 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"title": "Eshop API",
+		"version": "1.0.0"
+	},
+	"paths": {
+		"/search": {
+			"get": {
+				"description": "Returns the products",
+				"parameters": [
+					{
+						"name": "name",
+						"in": "query",
+						"description": "Search term",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Successful operation",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/Product"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/like": {
+			"post": {
+				"description": "Like a product",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "query",
+						"description": "ID of the product to like",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "Product liked successfully, no content returned"
+					},
+					"400": {
+						"description": "Invalid product ID supplied"
+					},
+					"404": {
+						"description": "Product not found"
+					}
+				}
+			}
+		},
+		"/popular-products": {
+			"get": {
+				"description": "Returns the 5 most popular products",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Successful operation",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/Product"
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"definitions": {
+		"Product": {
+			"type": "object",
+			"properties": {
+				"_id": {
+					"type": "string",
+					"description": "Unique identifier for the product"
+				},
+				"name": {
+					"type": "string",
+					"description": "Name of the product"
+				},
+				"image_url": {
+					"type": "string",
+					"description": "URL of the product image"
+				},
+				"description": {
+					"type": "string",
+					"description": "Description of the product"
+				},
+				"likes": {
+					"type": "integer",
+					"description": "Number of likes for the product"
+				}
+			},
+			"required": [
+				"_id",
+				"name",
+				"image_url",
+				"description",
+				"likes"
+			]
+		}
+	}
+}
