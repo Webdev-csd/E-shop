@@ -111,8 +111,10 @@
                     <img src="/backend${product.image_url}" alt="${product.name}" />
                     <h2>${product.name}</h2>
                     <p class="product-description">${product.description}</p>
-                    <p class="product-likes">${product.likes}</p>
-                    <p class="product-price">${product.price.toFixed(2)}€</p>
+                    <div class="product-likes-price">
+                        <p class="product-likes">❤️ ${product.likes}</p>
+                        <p class="product-price">${product.price.toFixed(2)}€</p>
+                    </div>
                 `;
                 productList.appendChild(li);
             });
