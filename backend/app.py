@@ -1,7 +1,7 @@
 import os
 from random import randint
 
-from flask import Flask
+from flask import Flask, request, jsonify
 from flask_cors import CORS
 from flask_pymongo import MongoClient
 from flask_swagger_ui import get_swaggerui_blueprint
@@ -180,7 +180,13 @@ if products.count_documents({}) == 0:
 
 @app.route("/search", methods=["GET"])
 def search():
-    pass
+    query = request.args.get("q", "")  # Get search query from request
+    search_results = products.find(
+        {"name": {"$regex": query, "$options": "i"}}  # Case-insensitive search
+    ).sort("price", -1)  # Sort by price in descending order
+
+    return jsonify(list(search_results))
+
 
 
 @app.route("/like", methods=["POST"])
