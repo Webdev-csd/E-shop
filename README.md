@@ -16,3 +16,8 @@
     
 
 
+To run the backend, you need to have Docker installed and run the following command in the root directory of the project:
+
+```bash
+docker-compose down && docker-compose up --build
+```

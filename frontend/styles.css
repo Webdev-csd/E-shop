@@ -27,6 +27,7 @@ html, body {
   overflow: hidden;
   align-items: center;
   display:flex;
+  z-index: 999; /* Make navbar appear on top (didn't work for js-inserted elements) */
 }
 .navbar a {
   /* Text settings */
