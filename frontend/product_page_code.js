@@ -72,20 +72,23 @@ function displayProducts(products) {
     });
 }
 
-// Initial display of all products
-//displayProducts(sample_products);
 
 document.addEventListener("DOMContentLoaded", function () {
+    // Initial display of all products
+    displayProducts(sample_products);
+
     const searchInput = document.querySelector(".search-bar input");
     const searchButton = document.querySelector(".search-bar button");
+
+    // Define the API URL
+    const API_BASE_URL = "http://localhost:8080";
 
     searchButton.addEventListener("click", function () {
         const query = searchInput.value.trim();
         if (query) {
-            fetch(`/search?q=${encodeURIComponent(query)}`)
+            fetch(`${API_BASE_URL}/search?q=${encodeURIComponent(query)}`)
                 .then(response => response.json())
                 .then(products => {
-                    productsList.innerHTML = ""; // Clear previous results
                     displayProducts(products);
                 })
                 .catch(error => console.error("Error fetching products:", error));

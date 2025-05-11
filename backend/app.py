@@ -185,7 +185,13 @@ def search():
         {"name": {"$regex": query, "$options": "i"}}  # Case-insensitive search
     ).sort("price", -1)  # Sort by price in descending order
 
-    return jsonify(list(search_results))
+    # Convert MongoDB documents to JSON-serializable format
+    results_list = []
+    for product in search_results:
+        product["_id"] = str(product["_id"])  # Convert ObjectId to string
+        results_list.append(product)
+
+    return jsonify(list(results_list))
 
 
 
