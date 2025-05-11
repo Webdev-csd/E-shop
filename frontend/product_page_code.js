@@ -85,13 +85,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     searchButton.addEventListener("click", function () {
         const query = searchInput.value.trim();
-        if (query) {
-            fetch(`${API_BASE_URL}/search?q=${encodeURIComponent(query)}`)
-                .then(response => response.json())
-                .then(products => {
-                    displayProducts(products);
-                })
-                .catch(error => console.error("Error fetching products:", error));
-        }
+        fetch(`${API_BASE_URL}/search?q=${encodeURIComponent(query)}`)
+            .then(response => response.json())
+            .then(products => {
+                displayProducts(products);
+            })
+            .catch(error => console.error("Error fetching products:", error));
     });
 });
