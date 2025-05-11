@@ -9,16 +9,18 @@ html, body {
 }
 
 .header{
+  width: 100%;
   z-index: 1000;
+  position: fixed; /* Change to "relative" if you don't want navbar fixed but also change "margin-top" in main component to 0 */
+  top: 0px;
 }
+
+
 
 
 .navbar ul{
   background:beige;
   border-bottom:rgb(220, 220, 200) 1px solid; /* Soft separation bar */
-  position: fixed; /* Change to "relative" if you don't want navbar fixed but also change "margin-top" in main component to 0 */
-  top: 0;
-  width: 100%;
   list-style-type: none; /* Get rid of bullets from list */
   padding: 0px;
   margin: 0px;
@@ -51,28 +53,19 @@ html, body {
   align-items: center;
 }
 
-.swiper {
-  width: 600px;
-  height: fit-content;
-}
 
-.swiper-slide img{
-  width: 100%;
-}
-
-.swiper .swiper-button-next, .swiper .swiper-button-prev{
-  color:white
-}
-
-.swiper{
-  --swiper-pagination-color: white;
-}
 
 .main {
+  display: flex; 
+  justify-content: space-evenly;
+  /* flex-wrap: wrap; */
+  column-gap: 0px;
+  border: 2px solid blue;
   flex: 1; 
   margin-top: 64px; /* Compensate for the navbar height */
   padding: 20px;
-  text-align: center;
+  /* text-align: center; */
+  
 
 }
 
