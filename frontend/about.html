@@ -1,56 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E-Shop</title>
-  <link rel="stylesheet" href="/frontend/styles.css" />
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>E-Shop</title>
+	<link rel="stylesheet" href="/styles.css" />
 </head>
+
 <body>
-    
-    <header class="header">
 
-        <nav class="navbar">
-            <ul>
-                <li> <a href="/frontend/homepage-test.html"><img src="/assets/logo-placeholder-image.png" height="45" ></a> </li>
-                <li> <a class="navbar_text" href="/frontend/homepage-test.html">Home</a> </li>
-                <li> <a class="navbar_text" href="/frontend/products-test.html">Products</a> </li>
-                <li> <a class="navbar_text" href="/frontend/about.html">About</a> </li>
-            </ul>
-        </nav>
-         
-    </header>
+	<header class="header">
 
-    <!-- This is the div which will be different depending on the page -->
-    <div class="main" id="readme-container">
-        <p>Loading README...</p>
-    </div>
+		<nav class="navbar">
+			<ul>
+				<li> <a href="/homepage-test.html"><img src="/assets/logo-placeholder-image.png" height="45"></a> </li>
+				<li> <a class="navbar_text" href="/homepage-test.html">Home</a> </li>
+				<li> <a class="navbar_text" href="/products-test.html">Products</a> </li>
+				<li> <a class="navbar_text" href="/about.html">About</a> </li>
+			</ul>
+		</nav>
 
-    <footer class="site_footer">
-        <ul>
-            <li>Δημήτρης Τζίκας 4207</li>
-            <li>Γρηγόρης Κάπαλης-Προύσαλης 3971</li>
-            <li>Βίκτωρας Κιρτσούδης xxxx</li>
-        </ul>
-        
-        <a href="/frontend/homepage-test.html" >
-            <img src="/assets/logo-placeholder-image.png" alt="Webpage logo" height="45">
-        </a>
-    </footer>
+	</header>
 
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+	<!-- This is the div which will be different depending on the page -->
+	<div class="main" id="readme-container">
+		<p>Loading README...</p>
+	</div>
 
-    <script>    
-        fetch('../README.md')
-          .then(res => res.text())
-          .then(md => {
-            document.getElementById('readme-container').innerHTML = marked.parse(md);
-          })
-          .catch(err => {
-            document.getElementById('readme-container').innerHTML = "<p>Failed to load README.</p>";
-            console.error(err);
-          });
-    </script>
-  
+	<footer class="site_footer">
+		<ul>
+			<li>Δημήτρης Τζίκας 4207</li>
+			<li>Γρηγόρης Κάπαλης-Προύσαλης 3971</li>
+			<li>Βίκτωρ Κυρτσούδης 4143</li>
+		</ul>
+
+		<a href="/homepage-test.html">
+			<img src="/assets/logo-placeholder-image.png" alt="Webpage logo" height="45">
+		</a>
+	</footer>
+
+	<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+	<script>
+		fetch('README.md')
+			.then(res => res.text())
+			.then(md => {
+				document.getElementById('readme-container').innerHTML = marked.parse(md);
+			})
+			.catch(err => {
+				document.getElementById('readme-container').innerHTML = "<p>Failed to load README.</p>";
+				console.error(err);
+			});
+	</script>
+
 </body>
+
 </html>

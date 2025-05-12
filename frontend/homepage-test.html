@@ -1,100 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" >
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E-Shop</title>
-  <link rel="stylesheet" href="/frontend/styles.css" >
-  <link rel="stylesheet" href="/frontend/homepage-styles.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" >
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>E-Shop</title>
+	<link rel="stylesheet" href="/styles.css">
+	<link rel="stylesheet" href="/homepage-styles.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
 </head>
+
 <body>
-    
-    <header class="header">
 
-        <nav class="navbar">
-            <ul>
-                <li> <a href="/frontend/homepage-test.html"><img src="/assets/logo-placeholder-image.png" alt="" height="45" ></a> </li>
-                <li> <a class="navbar_text" href="/frontend/homepage-test.html">Home</a> </li>
-                <li> <a class="navbar_text" href="/frontend/products-test.html">Products</a> </li>
-                <li> <a class="navbar_text" href="/frontend/about.html">About</a> </li>
-            </ul>
-        </nav>
-         
-    </header>
+	<header class="header">
 
-    <!-- This is the div which will be different depending on the page -->
-    <div class="main">
+		<nav class="navbar">
+			<ul>
+				<li> <a href="/homepage-test.html"><img src="/assets/logo-placeholder-image.png" alt="" height="45"></a>
+				</li>
+				<li> <a class="navbar_text" href="/homepage-test.html">Home</a> </li>
+				<li> <a class="navbar_text" href="/products-test.html">Products</a> </li>
+				<li> <a class="navbar_text" href="/about.html">About</a> </li>
+			</ul>
+		</nav>
 
-        <div id="welcome_container">
-            <div id="welcome_text">
-                <h1>Welcome!</h1>
-                <p>MplaMpla making quality aparrel since 1964 with focus on fabric quality and ecofriendly approach. Our clothes last generations and are a staple in teenagers fashion all over the globe!</p>
-            </div>
-        </div>
-        <!-- Slider main container -->
-        <div class="swiper">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide"><img src="/assets/img_1.jpg" alt="" ></div>
-            <div class="swiper-slide"><img src="/assets/img_2.jpg" alt="" ></div>
-            <div class="swiper-slide"><img src="/assets/img_3.jpg" alt="" ></div>
-        
-            </div>
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
-        
-            <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-        
-            
-        </div>
-        
-    </div>
+	</header>
+
+	<!-- This is the div which will be different depending on the page -->
+	<div class="main">
+
+		<div id="welcome_container">
+			<div id="welcome_text">
+				<h1>Welcome!</h1>
+				<p>MplaMpla making quality aparrel since 1964 with focus on fabric quality and ecofriendly approach. Our
+					clothes last generations and are a staple in teenagers fashion all over the globe!</p>
+			</div>
+		</div>
+		<!-- Slider main container -->
+		<div class="swiper">
+			<!-- Additional required wrapper -->
+			<div class="swiper-wrapper">
+				<!-- Slides -->
+				<div class="swiper-slide"><img src="/assets/img_1.jpg" alt=""></div>
+				<div class="swiper-slide"><img src="/assets/img_2.jpg" alt=""></div>
+				<div class="swiper-slide"><img src="/assets/img_3.jpg" alt=""></div>
+
+			</div>
+			<!-- If we need pagination -->
+			<div class="swiper-pagination"></div>
+
+			<!-- If we need navigation buttons -->
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-button-next"></div>
 
 
-    <footer class="site_footer">
-        <ul>
-            <li>Δημήτρης Τζίκας 4207</li>
-            <li>Γρηγόρης Κάπαλης-Προύσαλης 3971</li>
-            <li>Βίκτωρας Κιρτσούδης xxxx</li>
-        </ul>
-        
-        <a href="/frontend/homepage-test.html" >
-            <img src="/assets/logo-placeholder-image.png" alt="Webpage logo" height="45">
-        </a>
-    </footer>
+		</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+	</div>
 
-    <script>
-        const swiper = new Swiper('.swiper', {
-        // Optional parameters
-        direction: 'horizontal',
-        autoplay: {
-            delay:3000,
-            disableOnInteraction:false
-        },
-        loop: true,
-        
 
-        // If we need pagination
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
+	<footer class="site_footer">
+		<ul>
+			<li>Δημήτρης Τζίκας 4207</li>
+			<li>Γρηγόρης Κάπαλης-Προύσαλης 3971</li>
+			<li>Βίκτωρ Κυρτσούδης 4143</li>
+		</ul>
 
-        // Navigation arrows
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
+		<a href="/homepage-test.html">
+			<img src="/assets/logo-placeholder-image.png" alt="Webpage logo" height="45">
+		</a>
+	</footer>
 
-        
-        });
-    </script>
-  
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+	<script>
+		const swiper = new Swiper('.swiper', {
+			// Optional parameters
+			direction: 'horizontal',
+			autoplay: {
+				delay: 3000,
+				disableOnInteraction: false
+			},
+			loop: true,
+
+
+			// If we need pagination
+			pagination: {
+				el: '.swiper-pagination',
+				clickable: true,
+			},
+
+			// Navigation arrows
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+
+
+		});
+	</script>
+
 </body>
+
 </html>
