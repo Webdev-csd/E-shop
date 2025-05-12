@@ -181,11 +181,24 @@ if products.count_documents({}) == 0:
 @app.route("/search", methods=["GET"])
 def search():
     query = request.args.get("q", "")  # Get search query from request
-    search_results = products.find(
-        {"name": {"$regex": query, "$options": "i"}}  # Case-insensitive search
-    ).sort("price", -1)  # Sort by price in descending order
+    search_results = []
+    # Handle empty search query
+    if not query:
+        search_results = products.find()
+    else:
+        search_results = products.find(
+            {"name": {"$regex": query, "$options": "i"}}  # Case-insensitive search
+        )
+    # Sort by price in descending order
+    search_results.sort("price", -1)  
 
-    return jsonify(list(search_results))
+    # Convert MongoDB documents to JSON-serializable format
+    results_list = []
+    for product in search_results:
+        product["_id"] = str(product["_id"])  # Convert ObjectId to string
+        results_list.append(product)
+
+    return jsonify(list(results_list))
 
 
 
