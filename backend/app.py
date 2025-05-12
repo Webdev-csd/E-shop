@@ -196,7 +196,10 @@ def like():
 
 @app.route("/popular-products", methods=["GET"])
 def get_popular_products():
-    pass
+
+    top_5 = products.find().sort("likes",-1).limit(5)
+    
+    return jsonify(list(top_5))
 
 
 if __name__ == "__main__":
