@@ -45,6 +45,9 @@ services:
       - E-shop
     depends_on:
       - myflask
+    volumes:
+    - ./frontend:/usr/share/nginx/html
+    - ./frontend/nginx.conf:/etc/nginx/nginx.conf
 
 networks:
   E-shop:
