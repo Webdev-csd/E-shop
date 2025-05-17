@@ -207,12 +207,15 @@ def like():
     pass
 
 
-@app.route("/popular-products", methods=["GET"])
-def get_popular_products():
+@app.route("/popular_products", methods=["GET"])
+def popular_products():
 
-    top_5 = products.find().sort("likes",-1).limit(5)
-    
-    return jsonify(list(top_5))
+    top_5 = products.find().sort("likes", -1).limit(5)
+    results = []
+    for product in top_5:
+        product["_id"] = str(product["_id"])  # Convert ObjectId to string
+        results.append(product)
+    return jsonify(results)
 
 
 if __name__ == "__main__":

@@ -58,7 +58,7 @@ html, body {
 
 .main {
   display: flex; 
-  justify-content: space-evenly;
+  /* justify-content:flex-end; */
   /* flex-wrap: wrap; */
   column-gap: 0px;
   border: 2px solid blue;

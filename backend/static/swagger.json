@@ -58,7 +58,7 @@
 				}
 			}
 		},
-		"/popular-products": {
+		"/popular_products": {
 			"get": {
 				"description": "Returns the 5 most popular products",
 				"produces": [

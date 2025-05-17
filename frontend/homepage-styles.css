@@ -9,7 +9,7 @@
     row-gap: 20px;
   
     /* background-color: lightgray; */
-    /* border: 2px solid; */
+    border: 2px solid;
     border-radius: 10px;
     width: auto;
     max-width: 300px;
@@ -30,14 +30,15 @@
 
   .swiper {
     border-radius: 10px;
-    width: 600px;
-    /* height: fit-content; */
+    border: 2px solid blueviolet;
+   
+    width: 400px;
     height:400px;
     float:left;
   }
   
   .swiper-slide img{
-    width: 100%;
+    height: 100%;
   }
   
   .swiper .swiper-button-next, .swiper .swiper-button-prev{
