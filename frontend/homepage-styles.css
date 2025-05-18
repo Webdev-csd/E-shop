@@ -9,7 +9,7 @@
     row-gap: 20px;
   
     /* background-color: lightgray; */
-    border: 2px solid;
+    /* border: 2px solid; */
     border-radius: 10px;
     width: auto;
     max-width: 300px;
@@ -21,16 +21,24 @@
   
   #welcome_text h1,p{
     margin: 0px;
-    padding: 0px;
-    /* color: blue; */
+    padding: 0px;    
     flex: 0 0 auto;
     /* border: 2px solid; */
-    /* height: auto; */
+    
+  }
+
+  #welcome_text h1{
+    font-size: xxx-large;
+    font-weight: bold;
+  }
+
+  #welcome_text p{
+    font-size: x-large;
   }
 
   .swiper {
     border-radius: 10px;
-    border: 2px solid blueviolet;
+    /* border: 2px solid blueviolet; */
    
     width: 400px;
     height:400px;
