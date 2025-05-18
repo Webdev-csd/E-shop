@@ -5,6 +5,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from flask_pymongo import MongoClient
 from flask_swagger_ui import get_swaggerui_blueprint
+from bson import ObjectId
 
 app = Flask(__name__)
 
@@ -204,7 +205,18 @@ def search():
 
 @app.route("/like", methods=["POST"])
 def like():
-    pass
+    data = request.get_json()
+    product_id = data.get("_id")
+
+    products.update_one( 
+        {"_id": ObjectId(product_id)},
+        {"$inc": {"likes":1} } )
+    
+    updated_product = products.find_one({"_id": ObjectId(product_id)})
+    updated_likes = updated_product.get("likes",0)
+
+    return jsonify({"success": True , "updated_likes": updated_likes})
+
 
 
 @app.route("/popular_products", methods=["GET"])
