@@ -41,6 +41,16 @@ function displayProducts(products) {
 	});
 }
 
+function triggerrSearch() {
+	const query = document.querySelector(".search-bar input").value.trim();
+	fetch(`/api/search?q=${encodeURIComponent(query)}`)
+		.then(response => response.json())
+		.then(products => {
+			displayProducts(products);
+		})
+		.catch(error => console.error("Error fetching products:", error));
+}
+
 
 document.addEventListener("DOMContentLoaded", function () {
 	const query = "";
@@ -55,15 +65,11 @@ document.addEventListener("DOMContentLoaded", function () {
 	const searchInput = document.querySelector(".search-bar input");
 	const searchButton = document.querySelector(".search-bar button");
 
+	searchButton.addEventListener("click", triggerrSearch());
 
-	// Define the API URL
-	searchButton.addEventListener("click", function () {
-		const query = searchInput.value.trim();
-		fetch(`/api/search?q=${encodeURIComponent(query)}`)
-			.then(response => response.json())
-			.then(products => {
-				displayProducts(products);
-			})
-			.catch(error => console.error("Error fetching products:", error));
-	});
+	searchInput.addEventListener("keypress", function(event) {
+		if (event.key == "Enter") {
+			triggerrSearch();
+		}
+	})
 });
