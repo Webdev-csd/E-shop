@@ -8,7 +8,6 @@
 <ul>
     <li>HTML, CSS</li>
     <li>JavaScript</li>
-    <li>Svelte</li>
     <li>MongoDB</li>
     <li>Flask (REST api)</li>
     <li>Docker</li>
@@ -16,7 +15,7 @@
     
 
 
-To run the backend, you need to have Docker installed and run the following command in the root directory of the project:
+To run the website, you need to have Docker installed and run the following command in the root directory of the project:
 
 ```bash
 docker-compose down && docker-compose up --build
