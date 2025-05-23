@@ -1,0 +1,28 @@
+#readme-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+
+    border: solid 2px;
+    border-radius: 10px;
+
+    margin: 30px;
+    margin-top: 84px;
+
+    width: 700px;
+    background-color: lightgoldenrodyellow;
+}
+
+#readme-container ul{
+    list-style-type: none;
+}
+
+#readme-container a:link{
+    text-decoration: none;
+}
+
+#readme-container a:hover{
+    text-decoration:underline;
+}
+
