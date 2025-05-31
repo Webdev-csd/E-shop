@@ -66,16 +66,10 @@ p{
 
 .main {
   display: flex; 
-  /* justify-content:flex-end; */
-  /* flex-wrap: wrap; */
   column-gap: 0px;
-  /* border: 2px solid blue; */
   flex: 1; 
   margin-top: 64px; /* Compensate for the navbar height */
   padding: 20px;
-  /* text-align: center; */
-  
-
 }
 
 

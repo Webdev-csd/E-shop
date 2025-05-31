@@ -4,6 +4,7 @@ function displayProducts(products) {
 	productList.innerHTML = ''; // Clear existing products
 
 	products.forEach(product => {
+		//For every product fetched, an html element is created
 		const li = document.createElement('li');
 		li.className = 'product-item';
 		li.dataset.id = product._id;
@@ -17,6 +18,7 @@ function displayProducts(products) {
             </div>
         `;
 
+		//Update the likes property of a product if clicked
 		li.addEventListener("click", function() {
 			const productId = this.dataset.id;
 
@@ -46,7 +48,20 @@ function triggerrSearch() {
 	fetch(`/api/search?q=${encodeURIComponent(query)}`)
 		.then(response => response.json())
 		.then(products => {
+			//Clearing not-found div
+			const div = document.getElementById('not-found');
+			div.innerHTML = '';
+
+			//Show appropriate message if no products is matching the query
+			if (products.length === 0){
+				const p = document.createElement('p');
+
+				p.textContent = `There are no products named "${query}"`;
+				div.appendChild(p);
+			}
+
 			displayProducts(products);
+			
 		})
 		.catch(error => console.error("Error fetching products:", error));
 }

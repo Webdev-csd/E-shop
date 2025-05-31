@@ -1,3 +1,9 @@
+.main{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 #welcome_text{
     display: flex;
     justify-content: center;
@@ -8,11 +14,9 @@
     align-content:normal;
     row-gap: 20px;
   
-    /* background-color: lightgray; */
-    /* border: 2px solid; */
     border-radius: 10px;
     width: auto;
-    max-width: 300px;
+    max-width: 600px;
     height: 300px;
     padding: 50px;
     margin: 0px;
@@ -22,9 +26,7 @@
   #welcome_text h1,p{
     margin: 0px;
     padding: 0px;    
-    flex: 0 0 auto;
-    /* border: 2px solid; */
-    
+    flex: 0 0 auto;    
   }
 
   #welcome_text h1{
@@ -38,11 +40,9 @@
 
   .swiper {
     border-radius: 10px;
-    /* border: 2px solid blueviolet; */
    
     width: 400px;
     height:400px;
-    float:left;
   }
   
   .swiper-slide img{
@@ -56,3 +56,17 @@
   .swiper{
     --swiper-pagination-color: white;
   }
+
+  .swiper pagination{
+    z-index: 100;
+    position: absolute;
+  }
+
+  .swiper-pagination-bullet {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  transform: scale(1.4);
+  background-color: black;
+}

@@ -1,11 +1,14 @@
 const swiper = new Swiper('.swiper', {
+			loop: true,
+
 			// Optional parameters
 			direction: 'horizontal',
 			autoplay: {
 				delay: 3000,
 				disableOnInteraction: false
 			},
-			loop: true,
+			
+			watchSlidesProgress: true,
 
 
 			// If we need pagination
@@ -20,7 +23,7 @@ const swiper = new Swiper('.swiper', {
 				prevEl: '.swiper-button-prev',
 			},
 
-
+			
 		});
 
 fetch(`/api/popular_products`)
@@ -44,7 +47,9 @@ fetch(`/api/popular_products`)
             list.appendChild(slide)
         })
 
-        swiper.update()
+        swiper.update();
+		swiper.loopDestroy();
+		swiper.loopCreate();
 
     })
     .catch(error => console.error(error))

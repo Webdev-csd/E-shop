@@ -100,9 +100,16 @@
     background-color: beige;
     border: 1px solid rgb(220, 220, 200);
     border-right: none;
+
+    font-family: "Quicksand";
     
     border-bottom-left-radius: 8px;
     border-top-left-radius: 8px;
+    outline: none;
+}
+
+.search-bar input::selection{
+    background: plum;
 }
 
 .search-bar button{
@@ -120,7 +127,7 @@
     border-bottom-right-radius: 8px;
     border-top-right-radius: 8px;
 
-
+    outline: none;
     border: 1px solid rgb(220, 220, 200);
     border-left: none;
     cursor: pointer;
