@@ -188,10 +188,13 @@ def search():
         search_results = products.find()
     else:
         search_results = products.find(
-            {"name": {"$regex": query, "$options": "i"}}  # Case-insensitive search
+            {"$or": [
+                {"name": {"$regex": query, "$options": "i"}},
+                {"description": {"$regex": query, "$options": "i"}}
+            ]}
         )
     # Sort by price in descending order
-    search_results.sort("price", -1)  
+    search_results.sort("price", -1)
 
     # Convert MongoDB documents to JSON-serializable format
     results_list = []
